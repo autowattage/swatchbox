@@ -14,22 +14,38 @@ header {
     padding: 5rem 5rem 0;
     text-align: center;
     paint-order: stroke;
+    background-color: color-mix(in srgb, $white 20%, transparent);
 
     h1 {
       word-break: break-all;
-      padding: 0; margin: 1.5rem 0 0;
+      padding: 0; margin: 0;
       @include h1-size($fontsize: 3rem);
     }
     p {
       padding: 0; margin: 1.5rem 0 0;
       @include h1-size($fontsize: 1rem);
     }
-
+    form {
+      display: flex; gap: .5rem; flex-direction: column;
+      max-width: 20rem; padding: 1rem 2rem; margin: 1.5rem auto;
+      background-color: $white; border-radius: .25rem;
+      input {
+        border: 1px solid $green; 
+        border-radius: .25rem; padding: .5rem 0;
+        &:hover {border: 1px solid $blue;}
+        &[type=submit] {
+          border: none;
+          background-image: linear-gradient(to right, $yellow, $green);
+          &:hover {
+            color: $white;
+            background-image: linear-gradient(to right, $green, $blue);
+          }
+        }
+      }
+    }
     nav {
-      margin: 1.5rem 0 0;
       display: flex; gap: 1.5rem;
       justify-content: center;
-
       a {
         background-color: $white;
         border-radius: .25rem;
@@ -37,18 +53,32 @@ header {
         &:hover {outline: .5rem solid color-mix(in srgb, $white 15%, transparent);}
       }
     }
-
-    svg {color: $white; font-size: 3rem; margin: 3rem 0 0; padding: 0;}
+    svg {color: $white; font-size: 3rem; margin: 2rem 0 0; padding: 0;}
   }
+}
 
+main {
+  padding: 2rem;
+  #overview {
+    h2 {margin: 0; font-size: 2rem;}
+    ol {
+      margin: 0; padding: 0;
+      display: flex; flex-direction: row;
+      list-style-type: none; gap: 1rem;
+    }
+  }
 }
 
 /* Tablet view */
 @media (min-width: 40rem) {
   header div {
-    background-color: color-mix(in srgb, $white 20%, transparent);
     clip-path: circle(20rem);
     h1 {@include h1-size($fontsize: 4rem);}
+  }
+  main {
+    #overview {
+      h2 {font-size: 2.5rem;}
+    }
   }
 }
 /* Desktop view */
@@ -56,5 +86,10 @@ header {
   header div {
     clip-path: circle(25rem);
     h1 {@include h1-size($fontsize: 5rem);}
+  }
+  main {
+    #overview {
+      h2 {font-size: 3rem;}
+    }
   }
 }

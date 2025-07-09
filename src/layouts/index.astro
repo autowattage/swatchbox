@@ -14,12 +14,26 @@ const {title} = Astro.props;
     <header><div>
       <h1>swatchbox</h1>
       <p>design an addon for a physical modular art system</p>
+      <form>
+        <label for="emailrsvp">RSVP here to be notified!</label>
+        <input type="email" name="emailrsvp" required/>
+        <input type="submit" value="RSVP"/>
+      </form>
       <nav>
         <a href="">Tutorial</a>
         <a href="">Gallery</a>
       </nav>
-      <Icon name="tdesign:chevron-down"/>
+      <a href="#overview"><Icon name="tdesign:chevron-down"/></a>
     </div></header>
-    <p>note to self: make pretty later!</p>
+    <main>
+      <article id="overview">
+        <h2>the overview</h2>
+        <ol>
+          <li>Choose your path</li>
+          <li>Design your module</li>
+          <li>Get your swatchbox!</li>
+        </ol>
+      </article>
+    </main>
   </body>
 </html>
