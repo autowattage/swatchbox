@@ -1,0 +1,5 @@
+@import 'variables';
+footer p {
+  background-image: linear-gradient(to right, $yellow, $green, $blue);
+  padding: .5rem 0; margin: 0; text-align: center;
+}

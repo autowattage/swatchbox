@@ -1,5 +1,34 @@
 ---
-import Homepage from '../layouts/index.astro';
+/* Components */
+import { Icon } from 'astro-icon/components'
+import Template from '../layouts/Template.astro';
+/* CSS */
+import '../styles/index.scss';
 ---
-<Homepage title="Swatchbox">
-</Homepage>
+<Template title="Swatchbox">
+  <header><div>
+    <h1>swatchbox</h1>
+    <p>design an addon for a physical modular art system</p>
+    <form>
+      <label for="emailrsvp">RSVP here to be notified!</label>
+      <input type="email" name="emailrsvp" required/>
+      <input type="submit" value="RSVP"/>
+    </form>
+    <nav>
+      <a href="">Tutorial</a>
+      <a href="">Gallery</a>
+    </nav>
+    <a href="#overview"><Icon name="tdesign:chevron-down"/></a>
+  </div></header>
+
+  <main>
+    <article id="overview">
+      <h2>the overview</h2>
+      <ol>
+        <li>Choose your path</li>
+        <li>Design your module</li>
+        <li>Get your swatchbox!</li>
+      </ol>
+    </article>
+  </main>
+</Template>

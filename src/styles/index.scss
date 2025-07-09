@@ -8,10 +8,10 @@
 }
 
 header {
-  background-image: linear-gradient(to right, $yellow, $green, 80%, $blue);
+  background-image: linear-gradient(to right, $yellow, $green, $blue);
 
   div {
-    padding: 5rem 5rem 0;
+    padding: 2rem 2rem 0;
     text-align: center;
     paint-order: stroke;
     background-color: color-mix(in srgb, $white 20%, transparent);
@@ -60,11 +60,17 @@ header {
 main {
   padding: 2rem;
   #overview {
-    h2 {margin: 0; font-size: 2rem;}
+    h2 {margin: 0 0 1.5rem; font-size: 2rem; text-align: center;}
     ol {
       margin: 0; padding: 0;
       display: flex; flex-direction: row;
-      list-style-type: none; gap: 1rem;
+      gap: 1rem; flex-wrap: wrap;
+      list-style-position: inside;
+      li {
+        background-color: $yellow; padding: 1rem 2rem;
+        min-height: 8rem;
+        flex-basis: 40%; flex-grow: 1;
+      }
     }
   }
 }
@@ -72,6 +78,7 @@ main {
 /* Tablet view */
 @media (min-width: 40rem) {
   header div {
+    padding: 5rem 5rem 0;
     clip-path: circle(20rem);
     h1 {@include h1-size($fontsize: 4rem);}
   }
