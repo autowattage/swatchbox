@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/tdesign": "^1.2.8",
     "astro": "^5.11.0",
+    "astro-icon": "^1.1.5",
     "sass": "^1.89.2"
   }
 }

@@ -1,19 +1,60 @@
+@use "sass:math";
 @import 'global';
 
-header { background-image: linear-gradient(to right, $yellow, $green, 75%, $blue); }
 
-h1 {
-  background: $white;
-  clip-path: circle(20rem);
-  text-shadow:
-    .25rem .25rem .75rem $black,
-    -.25rem .25rem .75rem $black,
-    .25rem -.25rem .75rem $black,
-    -.25rem -.25rem .75rem $black;
-  -webkit-text-stroke: 1rem $white;
-  paint-order: stroke;
+@mixin h1-size($fontsize) {
+  font-size: $fontsize;
+  -webkit-text-stroke: $fontsize*.75 $white;
+}
 
-  padding: 4rem 1rem; margin: 0;
-  text-align: center; font-size: 4rem;
-  word-break: break-all;
+header {
+  background-image: linear-gradient(to right, $yellow, $green, 80%, $blue);
+
+  div {
+    padding: 5rem 5rem 0;
+    text-align: center;
+    paint-order: stroke;
+
+    h1 {
+      word-break: break-all;
+      padding: 0; margin: 1.5rem 0 0;
+      @include h1-size($fontsize: 3rem);
+    }
+    p {
+      padding: 0; margin: 1.5rem 0 0;
+      @include h1-size($fontsize: 1rem);
+    }
+
+    nav {
+      margin: 1.5rem 0 0;
+      display: flex; gap: 1.5rem;
+      justify-content: center;
+
+      a {
+        background-color: $white;
+        border-radius: .25rem;
+        padding: 1rem 2rem;
+        &:hover {outline: .5rem solid color-mix(in srgb, $white 15%, transparent);}
+      }
+    }
+
+    svg {color: $white; font-size: 3rem; margin: 3rem 0 0; padding: 0;}
+  }
+
+}
+
+/* Tablet view */
+@media (min-width: 40rem) {
+  header div {
+    background-color: color-mix(in srgb, $white 20%, transparent);
+    clip-path: circle(20rem);
+    h1 {@include h1-size($fontsize: 4rem);}
+  }
+}
+/* Desktop view */
+@media (min-width: 60rem) {
+  header div {
+    clip-path: circle(25rem);
+    h1 {@include h1-size($fontsize: 5rem);}
+  }
 }

@@ -1,5 +1,6 @@
 ---
 /* Components */
+import { Icon } from 'astro-icon/components'
 import Head from '../components/Head.astro';
 
 /* CSS */
@@ -10,9 +11,15 @@ const {title} = Astro.props;
 <html lang="en">
   <Head title={title}/>
   <body>
-    <header>
+    <header><div>
       <h1>swatchbox</h1>
-    </header>
+      <p>design an addon for a physical modular art system</p>
+      <nav>
+        <a href="">Tutorial</a>
+        <a href="">Gallery</a>
+      </nav>
+      <Icon name="tdesign:chevron-down"/>
+    </div></header>
     <p>note to self: make pretty later!</p>
   </body>
 </html>
