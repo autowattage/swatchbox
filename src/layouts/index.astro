@@ -2,12 +2,17 @@
 /* Components */
 import Head from '../components/Head.astro';
 
+/* CSS */
+import '../styles/index.scss';
+
 const {title} = Astro.props;
 ---
 <html lang="en">
   <Head title={title}/>
   <body>
-    <h1>Swatchbox</h1>
+    <header>
+      <h1>swatchbox</h1>
+    </header>
     <p>note to self: make pretty later!</p>
   </body>
 </html>

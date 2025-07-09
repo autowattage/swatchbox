@@ -1,0 +1,19 @@
+@import 'global';
+
+header { background-image: linear-gradient(to right, $yellow, $green, 75%, $blue); }
+
+h1 {
+  background: $white;
+  clip-path: circle(20rem);
+  text-shadow:
+    .25rem .25rem .75rem $black,
+    -.25rem .25rem .75rem $black,
+    .25rem -.25rem .75rem $black,
+    -.25rem -.25rem .75rem $black;
+  -webkit-text-stroke: 1rem $white;
+  paint-order: stroke;
+
+  padding: 4rem 1rem; margin: 0;
+  text-align: center; font-size: 4rem;
+  word-break: break-all;
+}
